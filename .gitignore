@@ -1,0 +1,11 @@
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+.DS_Store
+.swiftpm/
+.build/
+*.dmg
+dist/
+CLAUDE.md

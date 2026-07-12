@@ -1,0 +1,106 @@
+import SwiftUI
+
+/// Step 6: offer to save a styled PDF of the recorded times.
+struct SaveView: View {
+    @EnvironmentObject var store: ExamStore
+    @State private var savedURL: URL?
+    @State private var didAttempt = false
+    @FocusState private var nameFocused: Bool
+
+    private var isSaved: Bool { savedURL != nil }
+    private var trimmedName: String {
+        store.examName.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    var body: some View {
+        VStack(spacing: 22) {
+            Image(systemName: isSaved ? "checkmark.circle.fill" : "square.and.arrow.down")
+                .font(.system(size: 48))
+                .foregroundColor(.zenAccent)
+                .id(isSaved)
+                .transition(.scale(scale: 0.5).combined(with: .opacity))
+
+            Text(isSaved ? "Saved" : "Save your times?").zenTitle(30)
+                .id(isSaved)
+                .transition(.opacity.combined(with: .offset(y: 8)))
+
+            Text(message)
+                .font(.system(size: 14, design: .rounded))
+                .foregroundColor(.zenSubtle)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: 460)
+                .id(isSaved)
+                .transition(.opacity)
+
+            // Ask for the exam's name before saving — it titles the PDF report.
+            if savedURL == nil {
+                VStack(spacing: 6) {
+                    Text("Exam name")
+                        .font(.system(size: 12, weight: .medium, design: .rounded))
+                        .foregroundColor(.zenSubtle)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    TextField("e.g. Physics Paper 1", text: $store.examName)
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 16, design: .rounded))
+                        .foregroundColor(.zenText)
+                        .focused($nameFocused)
+                        .padding(.vertical, 10)
+                        .padding(.horizontal, 14)
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Color.white.opacity(0.10)))
+                        .overlay(RoundedRectangle(cornerRadius: 12)
+                            .strokeBorder(Color.white.opacity(nameFocused ? 0.25 : 0.10), lineWidth: 1))
+                        .onSubmit { attemptSave() }
+                }
+                .frame(maxWidth: 360)
+                .transition(.opacity)
+            }
+
+            HStack(spacing: 12) {
+                if savedURL == nil {
+                    Button("Not now") { store.reset() }
+                        .buttonStyle(PillButtonStyle())
+                    Button("Save PDF") { attemptSave() }
+                        .buttonStyle(PillButtonStyle(prominent: true, enabled: !trimmedName.isEmpty))
+                        .disabled(trimmedName.isEmpty)
+                } else {
+                    Button("Reveal in Finder") {
+                        if let url = savedURL {
+                            NSWorkspace.shared.activateFileViewerSelecting([url])
+                        }
+                    }
+                    .buttonStyle(PillButtonStyle())
+                    Button("Done") { store.reset() }
+                        .buttonStyle(PillButtonStyle(prominent: true))
+                }
+            }
+            .id(isSaved)
+            .transition(.opacity.combined(with: .offset(y: 10)))
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .animation(.spring(response: 0.5, dampingFraction: 0.75), value: isSaved)
+    }
+
+    private func attemptSave() {
+        guard !trimmedName.isEmpty else {
+            nameFocused = true
+            return
+        }
+        store.examName = trimmedName
+        // Run the (modal) save panel, then animate into the "Saved" state.
+        let url = PDFExporter.savePDF(store: store)
+        didAttempt = true
+        withAnimation(.spring(response: 0.55, dampingFraction: 0.72)) {
+            savedURL = url
+        }
+    }
+
+    private var message: String {
+        if let url = savedURL {
+            return "Your report is saved at \(url.path)."
+        }
+        if didAttempt {
+            return "Save was cancelled. You can try again or finish up."
+        }
+        return "Name your exam, then export a styled PDF of the time spent on each question — over-budget questions are highlighted."
+    }
+}

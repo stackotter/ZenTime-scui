@@ -1,0 +1,279 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B4FFCEDD73DD6F7CE1233961 /* AnimatedBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0696D7F5B39A4013450F27B /* AnimatedBackground.swift */; };
+		669E94D1E1F57276DB5B5146 /* ChimePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FC8C103EC3F098F4D110DB /* ChimePlayer.swift */; };
+		E88AD44B3680355E0358AFD3 /* ExamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C56DB1E3548DD1943122A /* ExamStore.swift */; };
+		4C39B8E12F5A1FEE813EE4D7 /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A210C3B1F07D1063B10437 /* PDFExporter.swift */; };
+		D07D33E6EB9F55B36B8D3605 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115A9B040A2E64A464D8C75F /* RootView.swift */; };
+		871789D24A262FD03514A208 /* SaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C6FD787A0942FD7230B181 /* SaveView.swift */; };
+		9F54B901A19C89EF1E9B5CD1 /* SetupViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECDF419DCB788DBA0458356 /* SetupViews.swift */; };
+		0166DA0DA658DC8EF8F28D62 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCB2F01D0843A6424BE2F7 /* TimerView.swift */; };
+		4D6CF2E8753F3D5AD0CAF6F8 /* ZenTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3EB292896A5CE0B8F87CE0 /* ZenTimeApp.swift */; };
+		F6ABA74277E063422D921EE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B04B2273026590A440D27C9 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		38A007151ABE87CC01A5B6E9 /* ZenTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZenTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0696D7F5B39A4013450F27B /* AnimatedBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimatedBackground.swift"; sourceTree = "<group>"; };
+		71FC8C103EC3F098F4D110DB /* ChimePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChimePlayer.swift"; sourceTree = "<group>"; };
+		E12C56DB1E3548DD1943122A /* ExamStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExamStore.swift"; sourceTree = "<group>"; };
+		53A210C3B1F07D1063B10437 /* PDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFExporter.swift"; sourceTree = "<group>"; };
+		115A9B040A2E64A464D8C75F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootView.swift"; sourceTree = "<group>"; };
+		B4C6FD787A0942FD7230B181 /* SaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SaveView.swift"; sourceTree = "<group>"; };
+		2ECDF419DCB788DBA0458356 /* SetupViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetupViews.swift"; sourceTree = "<group>"; };
+		20FCB2F01D0843A6424BE2F7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerView.swift"; sourceTree = "<group>"; };
+		EB3EB292896A5CE0B8F87CE0 /* ZenTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZenTimeApp.swift"; sourceTree = "<group>"; };
+		5B04B2273026590A440D27C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Assets.xcassets"; sourceTree = "<group>"; };
+		E977C9DFF937CD7E55914DF2 /* ZenTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ZenTime.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F01580CCB5F725E4E879D491 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDA6D6223944636B9C5B54AA = {
+			isa = PBXGroup;
+			children = (
+				E54ED815E4F7D7A7177E9F81 /* ZenTime */,
+				BFE00B156DCFC34C4751A6E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E54ED815E4F7D7A7177E9F81 /* ZenTime */ = {
+			isa = PBXGroup;
+			children = (
+				D0696D7F5B39A4013450F27B /* AnimatedBackground.swift */,
+				71FC8C103EC3F098F4D110DB /* ChimePlayer.swift */,
+				E12C56DB1E3548DD1943122A /* ExamStore.swift */,
+				53A210C3B1F07D1063B10437 /* PDFExporter.swift */,
+				115A9B040A2E64A464D8C75F /* RootView.swift */,
+				B4C6FD787A0942FD7230B181 /* SaveView.swift */,
+				2ECDF419DCB788DBA0458356 /* SetupViews.swift */,
+				20FCB2F01D0843A6424BE2F7 /* TimerView.swift */,
+				EB3EB292896A5CE0B8F87CE0 /* ZenTimeApp.swift */,
+				5B04B2273026590A440D27C9 /* Assets.xcassets */,
+				E977C9DFF937CD7E55914DF2 /* ZenTime.entitlements */,
+			);
+			path = ZenTime;
+			sourceTree = "<group>";
+		};
+		BFE00B156DCFC34C4751A6E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38A007151ABE87CC01A5B6E9 /* ZenTime.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E8A3AD980EC179856012B7E /* ZenTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A7B4673EE7E4581B91FBC4C /* Build configuration list for PBXNativeTarget "ZenTime" */;
+			buildPhases = (
+				72A8017E75795FC05F78F54C /* Sources */,
+				F01580CCB5F725E4E879D491 /* Frameworks */,
+				963488E8A773A44C9A5DC523 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZenTime;
+			productName = ZenTime;
+			productReference = 38A007151ABE87CC01A5B6E9 /* ZenTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F54143AB4E86B28C3AFEE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					0E8A3AD980EC179856012B7E = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = C91DFE8190D6AA5E5650E6C4 /* Build configuration list for PBXProject "ZenTime" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDA6D6223944636B9C5B54AA;
+			productRefGroup = BFE00B156DCFC34C4751A6E5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E8A3AD980EC179856012B7E /* ZenTime */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		963488E8A773A44C9A5DC523 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6ABA74277E063422D921EE9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		72A8017E75795FC05F78F54C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B4FFCEDD73DD6F7CE1233961 /* AnimatedBackground.swift in Sources */,
+				669E94D1E1F57276DB5B5146 /* ChimePlayer.swift in Sources */,
+				E88AD44B3680355E0358AFD3 /* ExamStore.swift in Sources */,
+				4C39B8E12F5A1FEE813EE4D7 /* PDFExporter.swift in Sources */,
+				D07D33E6EB9F55B36B8D3605 /* RootView.swift in Sources */,
+				871789D24A262FD03514A208 /* SaveView.swift in Sources */,
+				9F54B901A19C89EF1E9B5CD1 /* SetupViews.swift in Sources */,
+				0166DA0DA658DC8EF8F28D62 /* TimerView.swift in Sources */,
+				4D6CF2E8753F3D5AD0CAF6F8 /* ZenTimeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CEC25DBC9F463CC1CC34CC84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8456983ABBF079E76AB41CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		989E76A6E3D459B163A3B3E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = ZenTime/ZenTime.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zentime.ZenTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		1A927C84DB41E6F3C3070F30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = ZenTime/ZenTime.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainNibFile = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zentime.ZenTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C91DFE8190D6AA5E5650E6C4 /* Build configuration list for PBXProject "ZenTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEC25DBC9F463CC1CC34CC84 /* Debug */,
+				8456983ABBF079E76AB41CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A7B4673EE7E4581B91FBC4C /* Build configuration list for PBXNativeTarget "ZenTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				989E76A6E3D459B163A3B3E5 /* Debug */,
+				1A927C84DB41E6F3C3070F30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+}

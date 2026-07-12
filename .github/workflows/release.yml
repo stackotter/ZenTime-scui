@@ -1,0 +1,74 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: macos-14
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
+
+      - name: Build Release
+        run: |
+          rm -rf build
+          xcodebuild -project ZenTime.xcodeproj -scheme ZenTime \
+            -configuration Release -derivedDataPath build \
+            -destination 'platform=macOS' \
+            CODE_SIGN_IDENTITY="-" CODE_SIGNING_REQUIRED=YES \
+            build
+
+      - name: Verify app bundle
+        run: |
+          APP=build/Build/Products/Release/ZenTime.app
+          test -d "$APP" || (echo "App bundle not found at $APP" && exit 1)
+          codesign -dv --verbose=2 "$APP"
+
+      - name: Determine version
+        id: ver
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+
+      - name: Install create-dmg
+        run: brew install create-dmg
+
+      - name: Build .dmg
+        run: |
+          APP=build/Build/Products/Release/ZenTime.app
+          mkdir -p dist
+          create-dmg \
+            --volname "ZenTime ${{ steps.ver.outputs.version }}" \
+            --window-size 540 380 \
+            --icon-size 128 \
+            --icon "ZenTime.app" 140 160 \
+            --app-drop-link 400 160 \
+            --hide-extension "ZenTime.app" \
+            "dist/ZenTime-${{ steps.ver.outputs.version }}.dmg" \
+            "$APP" || true
+          # create-dmg can exit non-zero on benign Finder/AppleScript
+          # warnings in headless CI; verify the dmg actually exists.
+          test -f "dist/ZenTime-${{ steps.ver.outputs.version }}.dmg"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: ZenTime ${{ steps.ver.outputs.version }}
+          generate_release_notes: true
+          files: dist/ZenTime-${{ steps.ver.outputs.version }}.dmg
+          body: |
+            ZenTime is not signed with an Apple Developer ID (no notarization).
+            macOS Gatekeeper will warn that it's from an "unidentified developer" on
+            first launch. See the README's "macOS blocked this app" section for the
+            one-time workaround (right-click → Open).
