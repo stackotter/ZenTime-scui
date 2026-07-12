@@ -13,6 +13,17 @@ signals when you go over, and exports a styled PDF report when you're done.
 Built entirely with SwiftUI, AppKit, AVFoundation, and CoreGraphics — no
 third-party dependencies. Requires macOS 13 (Ventura) or later.
 
+<p>
+  <img src="screenshots/01-setup.png" width="32%" alt="Setup screen" />
+  <img src="screenshots/02-questions.png" width="32%" alt="Questions and marks screen" />
+  <img src="screenshots/03-summary.png" width="32%" alt="Summary screen" />
+</p>
+<p>
+  <img src="screenshots/04-timer.png" width="32%" alt="Live timer screen" />
+  <img src="screenshots/05-finished.png" width="32%" alt="Finished screen" />
+  <img src="screenshots/06-save.png" width="32%" alt="Save PDF screen" />
+</p>
+
 ## Download
 
 Grab the latest `.dmg` from the [Releases page](https://github.com/PatpateePhangern/ZenTime/releases/latest).
