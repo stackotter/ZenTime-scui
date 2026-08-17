@@ -1,0 +1,6 @@
+format_version = 2
+
+[apps.ZenTime]
+product = "ZenTime"
+identifier = "com.example.ZenTime"
+version = "0.1.0"
