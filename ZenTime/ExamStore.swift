@@ -1,5 +1,5 @@
 import Foundation
-import Combine
+import SwiftCrossUI
 
 /// The screens ZenTime walks through, in order.
 enum Stage {
@@ -22,31 +22,31 @@ struct Question: Identifiable, Equatable {
 
 /// Central state + timing engine. All mutation happens on the main actor.
 @MainActor
-final class ExamStore: ObservableObject {
+final class ExamStore: SwiftCrossUI.ObservableObject {
 
     // MARK: Navigation
-    @Published var stage: Stage = .setup
+    @SwiftCrossUI.Published var stage: Stage = .setup
 
     // MARK: Setup inputs
-    @Published var hours: Int = 1
-    @Published var minutes: Int = 30
-    @Published var seconds: Int = 0
+    @SwiftCrossUI.Published var hours: Int = 1
+    @SwiftCrossUI.Published var minutes: Int = 30
+    @SwiftCrossUI.Published var seconds: Int = 0
 
     // MARK: Report metadata
     /// The exam's name, asked for on the save screen and printed on the PDF report.
-    @Published var examName: String = ""
+    @SwiftCrossUI.Published var examName: String = ""
 
     // MARK: Questions
-    @Published var questions: [Question] = [
+    @SwiftCrossUI.Published var questions: [Question] = [
         Question(name: "Question 1", marks: 10),
         Question(name: "Question 2", marks: 10),
     ]
 
     // MARK: Live timing state
-    @Published var currentIndex: Int = 0
-    @Published var remaining: TimeInterval = 0   // total time left
-    @Published var isArmed: Bool = false          // false during the 1s navigation grace
-    @Published var finishedEarly: Bool = false    // true if the student ended before time ran out
+    @SwiftCrossUI.Published var currentIndex: Int = 0
+    @SwiftCrossUI.Published var remaining: TimeInterval = 0   // total time left
+    @SwiftCrossUI.Published var isArmed: Bool = false          // false during the 1s navigation grace
+    @SwiftCrossUI.Published var finishedEarly: Bool = false    // true if the student ended before time ran out
 
     // MARK: Derived values
     var totalSeconds: TimeInterval {
