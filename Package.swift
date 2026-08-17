@@ -5,10 +5,14 @@ import PackageDescription
 let package = Package(
     name: "ZenTime",
     platforms: [.macOS(.v13)],
+    dependencies: [],
     targets: [
         .executableTarget(
             name: "ZenTime",
-            path: "ZenTime"
-        ),
+            path: "ZenTime",
+            resources: [
+                .copy("Assets.xcassets")
+            ]
+        )
     ]
 )
