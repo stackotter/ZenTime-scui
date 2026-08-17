@@ -102,6 +102,14 @@ struct FinishedView: View {
     @Environment(ExamStore.self) var store
     @State private var appeared = false
 
+    var buttonLabel: String {
+        #if os(macOS)
+            "Acknowledge"
+        #else
+            "Finish"
+        #endif
+    }
+
     var body: some View {
         VStack(spacing: 22) {
             // Image(systemName: "checkmark.seal.fill")
@@ -122,9 +130,13 @@ struct FinishedView: View {
                 .foregroundColor(.zenSubtle)
                 .multilineTextAlignment(.center)
 
-            Button("Acknowledge") {
-                ChimePlayer.shared.stop()
-                store.acknowledge()
+            Button(buttonLabel) {
+                #if os(macOS)
+                    ChimePlayer.shared.stop()
+                    store.acknowledge()
+                #else
+                    store.reset()
+                #endif
             }
             // .buttonStyle(PillButtonStyle(prominent: true))
         }
