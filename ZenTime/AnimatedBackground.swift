@@ -71,6 +71,13 @@ struct AnimatedBackground: View {
         //     }
         // }
         // .ignoresSafeArea()
-        Color.clear
+        #if os(macOS)
+            Color.clear
+        #else
+            // Windows defaults to black in dark mode, and SCUI doesn't support
+            // overriding window color schemes yet, so we use our favourite
+            // background color instead.
+            Color.zenBackground
+        #endif
     }
 }

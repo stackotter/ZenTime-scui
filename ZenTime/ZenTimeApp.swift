@@ -1,6 +1,5 @@
 import SwiftCrossUI
 import DefaultBackend
-import AppKit
 
 @main
 struct ZenTimeApp: App {
@@ -43,6 +42,8 @@ struct ZenTimeApp: App {
                         window.center()
                     #endif
                 }
+                .colorScheme(.dark)
+                .preferredColorScheme(.dark)
         }
         // .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)

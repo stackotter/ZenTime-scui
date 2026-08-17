@@ -32,7 +32,9 @@ struct RootView: View {
         // traffic-light buttons remain visible (see WindowConfigurator).
         // .animation(.spring(response: 0.5, dampingFraction: 0.82), value: store.stage)
         .onAppear {
-            store.onFinished = { ChimePlayer.shared.play() }
+            #if os(macOS)
+                store.onFinished = { ChimePlayer.shared.play() }
+            #endif
         }
     }
 }
@@ -43,6 +45,7 @@ extension Color {
     static let zenText = Color(red: 0.95, green: 0.96, blue: 0.90)
     static let zenSubtle = Color.white.opacity(0.55)
     static let zenAccent = Color(red: 0.78, green: 0.82, blue: 0.42)
+    static let zenBackground = Color(red: 0.1, green: 0.12, blue: 0.15)
 }
 
 /// Rounded serene title font helper.

@@ -1,3 +1,4 @@
+import Foundation
 import SwiftCrossUI
 
 #if canImport(AppKitBackend)
@@ -35,7 +36,7 @@ struct SetupView: View {
     }
 
     private var colon: some View {
-        Text(":").zenTitle(34).foregroundColor(.zenSubtle).padding(.top, 18)
+        Text(":").zenTitle(34).foregroundColor(.zenSubtle).background(Color.blue).padding(.bottom, 18)
     }
 }
 
