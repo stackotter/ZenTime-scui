@@ -36,7 +36,7 @@ struct SetupView: View {
     }
 
     private var colon: some View {
-        Text(":").zenTitle(34).foregroundColor(.zenSubtle).background(Color.blue).padding(.bottom, 18)
+        Text(":").zenTitle(34).foregroundColor(.zenSubtle).padding(.bottom, 18)
     }
 }
 
