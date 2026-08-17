@@ -1,3 +1,11 @@
+# ZenTime-scui
+
+This fork is a [SwiftCrossUI](https://github.com/moreSwift/swift-cross-ui) port of [ZenTime](https://github.com/PatpateePhangern/ZenTime). This port adds support for Linux and Windows. I've tried to keep the macOS functionality as similar as possible within the set of SwiftUI features that SwiftCrossUI currently supports.
+
+I've included the original ZenTime README below for reference.
+
+---
+
 # ZenTime
 
 A calm, minimal macOS app for timed exam practice. ZenTime tracks how long
